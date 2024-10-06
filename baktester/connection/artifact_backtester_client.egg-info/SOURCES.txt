@@ -1,0 +1,7 @@
+pyproject.toml
+artifact_backtester_client/__init__.py
+artifact_backtester_client/backtester_client.py
+artifact_backtester_client.egg-info/PKG-INFO
+artifact_backtester_client.egg-info/SOURCES.txt
+artifact_backtester_client.egg-info/dependency_links.txt
+artifact_backtester_client.egg-info/top_level.txt

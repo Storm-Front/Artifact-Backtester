@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  artifact:
+    container_name: artifact-backtester
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+    ports:
+      - "${PORT}:${PORT}"  
+    environment:
+      - PORT=${PORT}
+      - DB_URL=${DB_URL}
+      - SERVER_USERNAME=${SERVER_USERNAME}
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - ./server/app:/app
+      - ../../artifact/artifact:/app/artifact
+    networks:
+      - internal_net
+      
+networks:
+  internal_net : 
+    driver: bridge
